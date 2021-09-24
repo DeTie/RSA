@@ -56,7 +56,7 @@ int primeGenerator(int bottom, int top){
 int* keyGen(){
     AlgPara algpara;
     int a = 0,b = 0;
-    //prevent that the original value of A is larger than B, thus the primeGenerator won't be called 
+    //Ensure A is not larger than B, or the primeGenerator won't be called 
     while(a <= b){
         a = primeGenerator(10,100);
         b = primeGenerator(10,100);
