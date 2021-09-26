@@ -8,8 +8,6 @@
 
 using namespace std;
 
-
-
 int main(){
     string raw_String;
     srand((unsigned)time(NULL));

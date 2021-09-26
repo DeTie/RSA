@@ -6,12 +6,11 @@
 using namespace std;
 
 int intEncrypt (int input, int e, int n){
-    int temp = input;
-    for(int i = 0;i < e-1;i ++ ){
-        //start with 0 end with e-1
-        temp %= n;
-        //sometimes temp is too large, which lets temp*input overflows
-        //when d&n is real big it still overflows, needed to be sovled
+    input %= n;
+    //sometimes input is too large, which lets temp*input overflows
+    //so the input would be pre-mod by n
+    int temp = 1;
+    for(int i = 0;i < e;i ++ ){
         temp *= input;
         temp %= n;
     }

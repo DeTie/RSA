@@ -4,11 +4,11 @@
 using namespace std;
 
 int intDecrypt(int input, int d, int n){
-    int temp = input;
-    for(int i = 0;i < d - 1;i ++ ){
-        temp %= n;
-        //sometimes temp is too large, which lets temp*input overflows
-        //when d&n is real big it still overflows, needed to be sovled
+    input %= n;
+    //sometimes input is too large, which lets temp*input overflows
+    //so the input would be pre-mod by n
+    int temp = 1;
+    for(int i = 0;i < d;i ++ ){
         temp *= input;
         temp %= n;
     }

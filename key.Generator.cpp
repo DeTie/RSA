@@ -26,6 +26,7 @@ AlgPara extEuAlgm (int a, int b, AlgPara algPara){
         return algPara;
     }
     algPara = extEuAlgm(b, a%b, algPara);
+    //Newton's method
     int temp = algPara.x;
     algPara.x = algPara.y;
     algPara.y = temp - (a / b) * algPara.y;
@@ -64,15 +65,10 @@ int* keyGen(){
     int n = a * b;
     int phi_N = (a - 1) * (b - 1);
     int e = primeGenerator(1,phi_N);
+    //e should be smaller than phi_N
     algpara = extEuAlgm(phi_N,e,algpara);
 
-    int d;
-    if(algpara.y<0){
-        d = phi_N+algpara.y;
-    }
-    else{
-        d = algpara.y;
-    }
+    int d = algpara.y < 0 ? phi_N+algpara.y : algpara.y;
     //!!If d<0， then d = d + phi_N, why? Somebody tells me pls!!
     int check = e * d % phi_N;
     //The y of the result responds to the number whose parameter values e
@@ -83,15 +79,3 @@ int* keyGen(){
     key[3]=d;
     return key;
 }
-
-// int main(){
-//     int* result;
-//     srand((unsigned)time(NULL));
-//     result = keyGen();
-//     cout<<result[0]<<endl;
-//     cout<<result[1]<<endl;
-//     cout<<result[2]<<endl;
-//     cout<<result[3]<<endl;
-//     system("pause");
-//     return 0;
-// }
