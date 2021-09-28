@@ -7,18 +7,19 @@ int intDecrypt(int input, int d, int n){
     input %= n;
     //sometimes input is too large, which lets temp*input overflows
     //so the input would be pre-mod by n
-    int temp = 1;
+    unsigned long int temp = 1;
     for(int i = 0;i < d;i ++ ){
-        temp *= input;
+        temp *= input;// n is usually very large so temp would be great
         temp %= n;
     }
+    
 
     //sometimes this error would occur, left for debugging
     if (temp < 33 || temp > 126){
             cout << "Char translation error!"<<endl;
             system("pause");
         }
-    return temp;
+    return (int)temp;
 
 }
 

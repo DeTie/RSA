@@ -30,12 +30,3 @@ string textEncrypt (string input, int e, int n){
     return result;
 }
 
-
-// int main(){
-//     //int i = intEncrypt(33,33,45);
-//     string aslu = "My dei dezcd";
-//     //cin >> temp;
-//     cout << intEncrypt(108,193,1025);
-//     system("pause");
-//     return 0;
-// }

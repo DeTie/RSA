@@ -64,9 +64,9 @@ int* keyGen(){
     }
     int n = a * b;
     int phi_N = (a - 1) * (b - 1);
-    int e = primeGenerator(1,phi_N);
+    int e = primeGenerator(1, phi_N);//commonly used value
     //e should be smaller than phi_N
-    algpara = extEuAlgm(phi_N,e,algpara);
+    algpara = extEuAlgm(phi_N, e, algpara);
 
     int d = algpara.y < 0 ? phi_N+algpara.y : algpara.y;
     //!!If d<0， then d = d + phi_N, why? Somebody tells me pls!!
