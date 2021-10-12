@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 #include <cmath>
 #include <ctime>
 #include "key.Generator.cpp"
@@ -24,7 +23,7 @@ int main(){
     cout <<"Encrypted text:"<<endl;
     
     string encryptedText = textEncrypt(raw_String,key[1],key[0]);
-    cout <<encryptedText<<endl;
+    cout << encryptedText<<endl;
     cout <<"Decrypted text:"<<endl;
     cout <<textDecrypt(encryptedText,key[3],key[2])<<endl;
     system("pause");

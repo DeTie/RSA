@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 #include "radix.Translate.cpp"
 using namespace std;
 

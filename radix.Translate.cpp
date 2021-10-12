@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+#include <string>
 #pragma once
 //prevent redefinition
 
